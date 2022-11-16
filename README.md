@@ -1,10 +1,10 @@
 # Mili's Git assignment
 Welcome to my repository. ✨
 
-Check out the main files here.
+Check out the main files [here](warpd).
 
 ## What's going on?
-This is in fact a fork from rvaiya/warpd (more info in here) I will be trying to add to main features to this great project:
+This is in fact a fork from rvaiya/warpd (more info in [here](https://github.com/rvaiya/warpd)) I will be trying to add to main features to this great project:
 
 - Don't hide the mouse in normal mode
 - Add an option to be able to configure it.
