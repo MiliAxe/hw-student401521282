@@ -220,7 +220,8 @@ struct input_event *normal_mode(struct input_event *start_ev, int oneshot)
 exit:
 
 
-//	platform.mouse_show();
+//	Avoid re-showing the mouse after normal mode is exited
+// //	platform.mouse_show();
 	platform.screen_clear(scr);
 
 	platform.input_ungrab_keyboard();
