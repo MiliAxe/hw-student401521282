@@ -40,7 +40,8 @@ static void redraw(screen_t scr, int x, int y, int hide_cursor)
 static void move(screen_t scr, int x, int y)
 {
 	platform.mouse_move(scr, x, y);
-	redraw(scr, x, y, 0);
+	// Avoid showing cursor (Set hide_cursor variable to true)
+	redraw(scr, x, y, 1);
 }
 
 struct input_event *normal_mode(struct input_event *start_ev, int oneshot)
