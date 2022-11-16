@@ -8,8 +8,7 @@
 
 static void redraw(screen_t scr, int x, int y, int hide_cursor)
 {
-	int sw, sh;
-	platform.screen_get_dimensions(scr, &sw, &sh);
+	int sw, sh; platform.screen_get_dimensions(scr, &sw, &sh);
 
 	const int gap = 10;
 	const int indicator_size = (config_get_int("indicator_size") * sh) / 1080;
@@ -86,7 +85,8 @@ struct input_event *normal_mode(struct input_event *start_ev, int oneshot)
 	platform.mouse_get_position(&scr, &mx, &my);
 	platform.screen_get_dimensions(scr, &sw, &sh);
 
-//	platform.mouse_hide();
+//	Hide the mouse when entered normal mode
+// //	platform.mouse_hide();
 	mouse_reset();
 	redraw(scr, mx, my, 0);
 
@@ -218,6 +218,7 @@ struct input_event *normal_mode(struct input_event *start_ev, int oneshot)
 	}
 
 exit:
+
 
 //	platform.mouse_show();
 	platform.screen_clear(scr);
