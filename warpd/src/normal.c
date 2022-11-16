@@ -50,6 +50,7 @@ struct input_event *normal_mode(struct input_event *start_ev, int oneshot)
 	screen_t scr;
 	int sh, sw;
 	int mx, my;
+	const int hide_cursor = config_get_int("hide_cursor");
 
 	const char *keys[] = {
 		"accelerator",
@@ -87,7 +88,9 @@ struct input_event *normal_mode(struct input_event *start_ev, int oneshot)
 	platform.screen_get_dimensions(scr, &sw, &sh);
 
 //	Hide the mouse when entered normal mode
-// //	platform.mouse_hide();
+	if (hide_cursor) {
+		platform.mouse_hide();
+	}
 	mouse_reset();
 	// redraw(scr, mx, my, 0);
 
