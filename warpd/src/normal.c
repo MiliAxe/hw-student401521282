@@ -225,7 +225,9 @@ exit:
 
 
 //	Avoid re-showing the mouse after normal mode is exited
-// //	platform.mouse_show();
+	if (hide_cursor) {
+		platform.mouse_show();
+	}
 	platform.screen_clear(scr);
 
 	platform.input_ungrab_keyboard();
