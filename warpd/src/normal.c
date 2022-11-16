@@ -41,7 +41,7 @@ static void move(screen_t scr, int x, int y)
 {
 	platform.mouse_move(scr, x, y);
 	// Avoid showing cursor (Set hide_cursor variable to true)
-	redraw(scr, x, y, 1);
+	// redraw(scr, x, y, 1);
 }
 
 struct input_event *normal_mode(struct input_event *start_ev, int oneshot)
@@ -89,7 +89,7 @@ struct input_event *normal_mode(struct input_event *start_ev, int oneshot)
 //	Hide the mouse when entered normal mode
 // //	platform.mouse_hide();
 	mouse_reset();
-	redraw(scr, mx, my, 0);
+	// redraw(scr, mx, my, 0);
 
 	while (1) {
 		const int cursz = config_get_int("cursor_size");
@@ -105,7 +105,7 @@ struct input_event *normal_mode(struct input_event *start_ev, int oneshot)
 		scroll_tick();
 		if (mouse_process_key(ev, "up", "down", "left", "right")) {
 			platform.mouse_get_position(&scr, &mx, &my);
-			redraw(scr, mx, my, 0);
+			// redraw(scr, mx, my, 0);
 			continue;
 		}
 
@@ -115,7 +115,7 @@ struct input_event *normal_mode(struct input_event *start_ev, int oneshot)
 		platform.mouse_get_position(&scr, &mx, &my);
 
 		if (config_input_match(ev, "scroll_down")) {
-			redraw(scr, mx, my, 1);
+			// redraw(scr, mx, my, 1);
 
 			if (ev->pressed) {
 				scroll_stop();
@@ -123,7 +123,7 @@ struct input_event *normal_mode(struct input_event *start_ev, int oneshot)
 			} else
 				scroll_decelerate();
 		} else if (config_input_match(ev, "scroll_up")) {
-			redraw(scr, mx, my, 1);
+			// redraw(scr, mx, my, 1);
 
 			if (ev->pressed) {
 				scroll_stop();
