@@ -9,6 +9,9 @@ This is in fact a fork from rvaiya/warpd (more info in [here](https://github.com
 - Don't hide the mouse in normal mode
 - Add an option to be able to configure it.
 
+## Screenshots
+Checkout the [screenshots](screenshots)!
+
 ## Disclaimer
 I'm sorry if this project is not marked as "forked", I already have a fork of it on my profile and I can't create multiple forks. This repository is only intended to be available for a short time.
 
